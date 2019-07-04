@@ -2,7 +2,9 @@
   "name": "functions",
   "description": "Integration test for the Firebase SDK for Google Cloud Functions",
   "scripts": {
-    "build": "./node_modules/.bin/tsc"
+    "build": "./node_modules/.bin/tsc",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "@google-cloud/pubsub": "^0.6.0",
@@ -10,11 +12,13 @@
     "firebase": "^4.9.1",
     "firebase-admin": "~5.12.1",
     "firebase-functions": "./firebase-functions.tgz",
-    "lodash": "^4.17.2"
+    "lodash": "^4.17.2",
+    "snyk": "^1.189.0"
   },
   "main": "lib/index.js",
   "devDependencies": {
     "typescript": "~2.8.3"
   },
-  "private": true
+  "private": true,
+  "snyk": true
 }
